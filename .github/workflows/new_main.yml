@@ -2,9 +2,9 @@
 name: Jira Sync
 on:
   issues:
-    types: [opened, closed, labeled, unlabeled]
+    types: [opened, closed, labeled, unlabeled, reopened]
   issue_comment:
-    types: [created]
+    types: [created, edited, deleted]
 jobs:
   sync:
     name: Sync Items
