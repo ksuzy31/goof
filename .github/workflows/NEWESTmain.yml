@@ -3,8 +3,8 @@ name: Push to JIRA
 on:
   issues:
     #types: [opened, edited, closed, reopened, labeled, unlabeled]
-  #issue_comment:
-    #types: [created]
+  issue_comment:
+    types: [created]
 
 jobs:
   test:
