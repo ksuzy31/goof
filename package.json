@@ -17,7 +17,7 @@
   "dependencies": {
     "ag-grid-enterprise": "27.2.1",
     "adm-zip": "0.4.11",
-    "body-parser": "1.0.0",
+    "body-parser": "1.6.0",
     "cfenv": "^1.0.4",
     "consolidate": "0.14.5",
     "ejs": "1.0.0",
