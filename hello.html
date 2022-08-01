@@ -1,3 +1,15 @@
+{
+  projects: [
+    {
+      details: [Object],
+      sourceFilePath: '/Users/ksuzy31/Kev-Stuff/Goof/goof',
+      vulnsummarycounter: [Array],
+      vulnerabilities: [Array]
+    }
+  ],
+  showSummaryOnly: false,
+  totalIssues: 23
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -526,7 +538,7 @@
           </svg>
         </a>
         <div class="test-meta">
-          <p class="timestamp">April 11th 2022, 2:26:01 pm</p>
+          <p class="timestamp">May 5th 2022, 12:59:58 pm</p>
           <div class="filepath" title="/Users/ksuzy31/Kev-Stuff/Goof/goof">Source: /Users/ksuzy31/Kev-Stuff/Goof/goof</div>
         </div>
       </div>
@@ -539,7 +551,7 @@
 
           <div class="meta-counts">
             <div class="meta-count">
-              <span class="severity-icon severity-icon--high"></span> <span><strong>5</strong> high issues</span>
+              <span class="severity-icon severity-icon--high"></span> <span><strong>6</strong> high issues</span>
             </div>
             <div class="meta-count">
               <span class="severity-icon severity-icon--medium"></span> <span><strong>15</strong> medium issues</span>
@@ -557,6 +569,110 @@
         </div>
       </div>
         <div class="cards--vuln filter--patch filter--ignore">
+          <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
+              <header class="card__header">
+                  <div class="card__header__main">
+                      <div class="severity-icon severity-icon--high"></div>
+                      <h2 class="card__title">Hardcoded Secret</h2>
+                      <div class="card__actions">
+                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
+                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
+                      </div>
+                  </div>
+                  <ul class="card__meta">
+                      <li class="card__meta__item">SNYK-CODE</li>
+                      <li class="card__meta__item">CWE-547</li>
+                  </ul>
+              </header>
+              <div class="card__section">
+                  <div class="card__summary severity--high">
+                      <p>Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in express-session.</p>
+                      <div class="file-location">Found in: <strong>app.js (line : 42)</strong></div>    
+                  </div>
+                  <div class="card__panel dataflow">
+                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
+                      
+                      <div class="dataflow__item">
+                          <span class="dataflow__lineno" title="line:column">43:11</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix">  secret: <br /></span><span class="marker">&#x27;keyboard cat&#x27;</span><span class="dataflow__codesuffix">,</span></div>
+                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span>
+                          <span class="dataflow__step">0</span>
+                      </div>
+                      
+                      <div class="dataflow__item">
+                          <span class="dataflow__lineno" title="line:column">42:9</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix">app.use(<br /></span><span class="marker">session</span><span class="dataflow__codesuffix">({</span></div>
+                          <span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
+                          <span class="dataflow__step">1</span>
+                      </div>
+                  </div>
+                  <div class="card__panel fix-analysis">
+                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
+                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
+          <p>When constants are hardcoded into applications, this information could easily be reverse-engineered and become known to attackers. For example, if a breached authentication token is hardcoded in multiple places in the application, it may lead to components of the application remaining vulnerable if not all instances are changed.
+          Another negative effect of hard-coding constants is potential unpredictability in the application&#39;s performance if the development team fails to update every single instance of the hardcoded constant throughout the code. For these reasons, hard-coding security-relevant constants is considered bad coding practice and should be remedied if present and avoided in future.</p>
+          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
+          <ul>
+          <li>Never hard code security-related constants; use symbolic names or configuration lookup files.</li>
+          <li>As hard coding is often done by coders working alone on a small scale, examine all legacy code components and test carefully when scaling.</li>
+          <li>Adopt a &quot;future-proof code&quot; mindset: While use of constants may save a little time now and make development simpler in the short term, it could cost time and money adapting to scale or other unforeseen circumstances (such as new hardware) in the future.</li>
+          </ul>
+          </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
+              <header class="card__header">
+                  <div class="card__header__main">
+                      <div class="severity-icon severity-icon--high"></div>
+                      <h2 class="card__title">Hardcoded Secret</h2>
+                      <div class="card__actions">
+                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
+                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
+                      </div>
+                  </div>
+                  <ul class="card__meta">
+                      <li class="card__meta__item">SNYK-CODE</li>
+                      <li class="card__meta__item">CWE-547</li>
+                  </ul>
+              </header>
+              <div class="card__section">
+                  <div class="card__summary severity--high">
+                      <p>Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.</p>
+                      <div class="file-location">Found in: <strong>app.js (line : 83)</strong></div>    
+                  </div>
+                  <div class="card__panel dataflow">
+                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
+                      
+                      <div class="dataflow__item">
+                          <span class="dataflow__lineno" title="line:column">83:13</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix">var token &#x3D; <br /></span><span class="marker">&#x27;SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9&#x27;</span><span class="dataflow__codesuffix">;</span></div>
+                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span>
+                          <span class="dataflow__step">0</span>
+                      </div>
+                      
+                      <div class="dataflow__item">
+                          <span class="dataflow__lineno" title="line:column">83:5</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix">var <br /></span><span class="marker">token</span><span class="dataflow__codesuffix"> &#x3D; &#x27;SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9&#x27;;</span></div>
+                          <span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
+                          <span class="dataflow__step">1</span>
+                      </div>
+                  </div>
+                  <div class="card__panel fix-analysis">
+                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
+                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
+          <p>When constants are hardcoded into applications, this information could easily be reverse-engineered and become known to attackers. For example, if a breached authentication token is hardcoded in multiple places in the application, it may lead to components of the application remaining vulnerable if not all instances are changed.
+          Another negative effect of hard-coding constants is potential unpredictability in the application&#39;s performance if the development team fails to update every single instance of the hardcoded constant throughout the code. For these reasons, hard-coding security-relevant constants is considered bad coding practice and should be remedied if present and avoided in future.</p>
+          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
+          <ul>
+          <li>Never hard code security-related constants; use symbolic names or configuration lookup files.</li>
+          <li>As hard coding is often done by coders working alone on a small scale, examine all legacy code components and test carefully when scaling.</li>
+          <li>Adopt a &quot;future-proof code&quot; mindset: While use of constants may save a little time now and make development simpler in the short term, it could cost time and money adapting to scale or other unforeseen circumstances (such as new hardware) in the future.</li>
+          </ul>
+          </div>
+                  </div>
+              </div>
+          </div>
           <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
               <header class="card__header">
                   <div class="card__header__main">
@@ -579,7 +695,7 @@
                   </div>
                   <div class="card__panel dataflow">
                       <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      
+                      <div class="dataflow__filename"> routes/index.js</div>
                       <div class="dataflow__item">
                           <span class="dataflow__lineno" title="line:column">155:14</span>
                           <div class="dataflow__code"><span class="dataflow__codeprefix">  var item &#x3D; <br /></span><span class="marker">req.body</span><span class="dataflow__codesuffix">.content;</span></div>
@@ -693,58 +809,6 @@
                   </div>
               </div>
           </div>
-          <div class="card card--vuln  disclosure--not-new severity--high" data-snyk-test="high">
-              <header class="card__header">
-                  <div class="card__header__main">
-                      <div class="severity-icon severity-icon--high"></div>
-                      <h2 class="card__title">Hardcoded Secret</h2>
-                      <div class="card__actions">
-                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
-                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
-                      </div>
-                  </div>
-                  <ul class="card__meta">
-                      <li class="card__meta__item">SNYK-CODE</li>
-                      <li class="card__meta__item">CWE-547</li>
-                  </ul>
-              </header>
-              <div class="card__section">
-                  <div class="card__summary severity--high">
-                      <p>Avoid hardcoding values that are meant to be secret. Found a hardcoded string used in here.</p>
-                      <div class="file-location">Found in: <strong>app.js (line : 83)</strong></div>    
-                  </div>
-                  <div class="card__panel dataflow">
-                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      <div class="dataflow__filename"> app.js</div>
-                      <div class="dataflow__item">
-                          <span class="dataflow__lineno" title="line:column">83:13</span>
-                          <div class="dataflow__code"><span class="dataflow__codeprefix">var token &#x3D; <br /></span><span class="marker">&#x27;SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9&#x27;</span><span class="dataflow__codesuffix">;</span></div>
-                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span>
-                          <span class="dataflow__step">0</span>
-                      </div>
-                      
-                      <div class="dataflow__item">
-                          <span class="dataflow__lineno" title="line:column">83:5</span>
-                          <div class="dataflow__code"><span class="dataflow__codeprefix">var <br /></span><span class="marker">token</span><span class="dataflow__codesuffix"> &#x3D; &#x27;SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9&#x27;;</span></div>
-                          <span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
-                          <span class="dataflow__step">1</span>
-                      </div>
-                  </div>
-                  <div class="card__panel fix-analysis">
-                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
-                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
-          <p>When constants are hardcoded into applications, this information could easily be reverse-engineered and become known to attackers. For example, if a breached authentication token is hardcoded in multiple places in the application, it may lead to components of the application remaining vulnerable if not all instances are changed.
-          Another negative effect of hard-coding constants is potential unpredictability in the application&#39;s performance if the development team fails to update every single instance of the hardcoded constant throughout the code. For these reasons, hard-coding security-relevant constants is considered bad coding practice and should be remedied if present and avoided in future.</p>
-          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
-          <ul>
-          <li>Never hard code security-related constants; use symbolic names or configuration lookup files.</li>
-          <li>As hard coding is often done by coders working alone on a small scale, examine all legacy code components and test carefully when scaling.</li>
-          <li>Adopt a &quot;future-proof code&quot; mindset: While use of constants may save a little time now and make development simpler in the short term, it could cost time and money adapting to scale or other unforeseen circumstances (such as new hardware) in the future.</li>
-          </ul>
-          </div>
-                  </div>
-              </div>
-          </div>
           <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
               <header class="card__header">
                   <div class="card__header__main">
@@ -767,7 +831,7 @@
                   </div>
                   <div class="card__panel dataflow">
                       <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      <div class="dataflow__filename"> routes/index.js</div>
+                      
                       <div class="dataflow__item">
                           <span class="dataflow__lineno" title="line:column">67:17</span>
                           <div class="dataflow__code"><span class="dataflow__codeprefix">exports.login &#x3D; <br /></span><span class="marker">function (req, res, next</span><span class="dataflow__codesuffix">) {</span></div>
@@ -1131,7 +1195,7 @@
                   </div>
                   <div class="card__panel dataflow">
                       <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      
+                      <div class="dataflow__filename"> routes/index.js</div>
                       <div class="dataflow__item">
                           <span class="dataflow__lineno" title="line:column">38:25</span>
                           <div class="dataflow__code"><span class="dataflow__codeprefix">  if (validator.isEmail(<br /></span><span class="marker">req.body</span><span class="dataflow__codesuffix">.username)) {</span></div>
@@ -1344,7 +1408,7 @@
               <header class="card__header">
                   <div class="card__header__main">
                       <div class="severity-icon severity-icon--medium"></div>
-                      <h2 class="card__title">Use of Hardcoded Credentials</h2>
+                      <h2 class="card__title">Sensitive Cookie in HTTPS Session Without &#x27;Secure&#x27; Attribute</h2>
                       <div class="card__actions">
                           <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
                           <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
@@ -1352,20 +1416,20 @@
                   </div>
                   <ul class="card__meta">
                       <li class="card__meta__item">SNYK-CODE</li>
-                      <li class="card__meta__item">CWE-798</li>
+                      <li class="card__meta__item">CWE-614</li>
                   </ul>
               </header>
               <div class="card__section">
                   <div class="card__summary severity--medium">
-                      <p>Do not hardcode credentials in code. Found hardcoded credential used in typeorm.createConnection.</p>
-                      <div class="file-location">Found in: <strong>typeorm-db.js (line : 11)</strong></div>    
+                      <p>Cookie misses the Secure attribute (it is false by default). Set it to true to protect the cookie from man-in-the-middle attacks.</p>
+                      <div class="file-location">Found in: <strong>app.js (line : 45)</strong></div>    
                   </div>
                   <div class="card__panel dataflow">
                       <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      <div class="dataflow__filename"> typeorm-db.js</div>
+                      <div class="dataflow__filename"> app.js</div>
                       <div class="dataflow__item">
-                          <span class="dataflow__lineno" title="line:column">6:1</span>
-                          <div class="dataflow__code"><span class="dataflow__codeprefix"><br /></span><span class="marker">typeorm.createConnection</span><span class="dataflow__codesuffix">({</span></div>
+                          <span class="dataflow__lineno" title="line:column">45:3</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix">  <br /></span><span class="marker">cookie</span><span class="dataflow__codesuffix">: { path: &#x27;/&#x27; }</span></div>
                           <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span><span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
                           <span class="dataflow__step">0</span>
                       </div>
@@ -1373,15 +1437,15 @@
                   <div class="card__panel fix-analysis">
                       <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
                       <div class="card__panel__markdown"><h2 id="details">Details</h2>
-          <p>Developers may use hardcoded credentials for convenience when coding in order to simplify their workflow. While they are responsible for removing these before production, occasionally this task may fall through the cracks. This also becomes a maintenance challenge when credentials are re-used across multiple applications.</p>
-          <p>Once attackers gain access, they may take advantage of privilege level to remove or alter data, take down a site or app, or hold any of the above for ransom. The risk across multiple similar projects is even greater. If code containing the credentials is reused across multiple projects, they will all be compromised.</p>
+          <p>In a session hijacking attack, if a cookie containing sensitive data is set without the <code>secure</code> attribute, an attacker might be able to intercept that cookie. Once the attacker has this information, they can potentially impersonate a user, accessing confidential data and performing actions that they would not normally be authorized to do. Attackers often gain access to this sensitive cookie data when it is transmitted insecurely in plain text over a standard HTTP session, rather than being encrypted and sent over an HTTPS session. This type of attack is highly preventable by following best practices when setting sensitive session cookies.</p>
           <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
           <ul>
-          <li>Plan software architecture such that keys and passwords are always stored outside the code, wherever possible.</li>
-          <li>Plan encryption into software architecture for all credential information and ensure proper handling of keys, credentials, and passwords.</li>
-          <li>Prompt for a secure password on first login rather than hard-code a default password.</li>
-          <li>If a hardcoded password or credential must be used, limit its use, for example, to system console users rather than via the network.</li>
-          <li>Use strong hashes for inbound password authentication, ideally with randomly assigned salts to increase the difficulty level in case of brute-force attack.</li>
+          <li>Set the <code>secure</code> attribute in the response header when setting cookies on the client side, and use a test tool to verify that secure cookie transmission is in place.</li>
+          <li>Always use HTTPS for all login pages and never redirect from HTTP to HTTPS, which leaves secure session data open to interception.</li>
+          <li>Follow other best practices when it comes to session cookies, such as setting the HttpOnly flag and maintaining highly time-limited sessions.</li>
+          <li>Consider implementing browser checks and providing secure data only within a browser that supports tight cookie security.</li>
+          <li>Generate session IDs in a way that is not easily predictable, invalidate sessions upon logout, and never reuse session IDs.</li>
+          <li>Educate developers to use built-in secure session-management functionality within the development environment instead of taking a DIY approach.</li>
           </ul>
           </div>
                   </div>
@@ -1443,102 +1507,6 @@
               <header class="card__header">
                   <div class="card__header__main">
                       <div class="severity-icon severity-icon--medium"></div>
-                      <h2 class="card__title">Information Exposure</h2>
-                      <div class="card__actions">
-                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
-                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
-                      </div>
-                  </div>
-                  <ul class="card__meta">
-                      <li class="card__meta__item">SNYK-CODE</li>
-                      <li class="card__meta__item">CWE-200</li>
-                  </ul>
-              </header>
-              <div class="card__section">
-                  <div class="card__summary severity--medium">
-                      <p>Disable X-Powered-By header for your Express app (consider using Helmet middleware), because it exposes information about the used framework to potential attackers.</p>
-                      <div class="file-location">Found in: <strong>app.js (line : 28)</strong></div>    
-                  </div>
-                  <div class="card__panel dataflow">
-                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      <div class="dataflow__filename"> app.js</div>
-                      <div class="dataflow__item">
-                          <span class="dataflow__lineno" title="line:column">28:11</span>
-                          <div class="dataflow__code"><span class="dataflow__codeprefix">var app &#x3D; <br /></span><span class="marker">express()</span><span class="dataflow__codesuffix">;</span></div>
-                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span><span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
-                          <span class="dataflow__step">0</span>
-                      </div>
-                  </div>
-                  <div class="card__panel fix-analysis">
-                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
-                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
-          <p>Sensitive data includes: personally identifiable information (PII) of employees, customers, users, or other third parties; financial information; code; intellectual property; or protected network information such as passwords. Exposure of sensitive information to an unauthorized actor occurs when any party who does not require this information for business purposes can remove this information from the secure network.
-          Consequences of exposure can include holding it for ransom payment, identity theft, or access to other internal network resources-along with financial loss due to regulatory fines, court settlements, or cost to restore compromised systems. As most attackers aim to extract sensitive information, this CWE only describes exploits that take advantage of vulnerabilities related to how data is handled: the management, storage, transfer, or removal of sensitive information.</p>
-          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
-          <ul>
-          <li>Encrypt data at all times, whether in transit or at rest.</li>
-          <li>When transporting data, always use a secure protocol such as TLS.</li>
-          <li>Before collecting PII or financial information, consider whether there is a true business need for this information; similarly, before storing the data, ensure that there is an ongoing business need.</li>
-          <li>Classify all incoming data according to privacy and security guidelines to improve awareness of sensitive data.</li>
-          <li>Ensure that caching is disabled for all transactions involving sensitive information.</li>
-          <li>Store passwords with secure, salted hashing functions.</li>
-          <li>Apply a network-wide least-privilege policy so sensitive data is provided only to users with business need to know.</li>
-          </ul>
-          </div>
-                  </div>
-              </div>
-          </div>
-          <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
-              <header class="card__header">
-                  <div class="card__header__main">
-                      <div class="severity-icon severity-icon--medium"></div>
-                      <h2 class="card__title">Sensitive Cookie in HTTPS Session Without &#x27;Secure&#x27; Attribute</h2>
-                      <div class="card__actions">
-                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
-                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
-                      </div>
-                  </div>
-                  <ul class="card__meta">
-                      <li class="card__meta__item">SNYK-CODE</li>
-                      <li class="card__meta__item">CWE-614</li>
-                  </ul>
-              </header>
-              <div class="card__section">
-                  <div class="card__summary severity--medium">
-                      <p>Cookie misses the Secure attribute (it is false by default). Set it to true to protect the cookie from man-in-the-middle attacks.</p>
-                      <div class="file-location">Found in: <strong>app.js (line : 45)</strong></div>    
-                  </div>
-                  <div class="card__panel dataflow">
-                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      <div class="dataflow__filename"> app.js</div>
-                      <div class="dataflow__item">
-                          <span class="dataflow__lineno" title="line:column">45:3</span>
-                          <div class="dataflow__code"><span class="dataflow__codeprefix">  <br /></span><span class="marker">cookie</span><span class="dataflow__codesuffix">: { path: &#x27;/&#x27; }</span></div>
-                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span><span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
-                          <span class="dataflow__step">0</span>
-                      </div>
-                  </div>
-                  <div class="card__panel fix-analysis">
-                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
-                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
-          <p>In a session hijacking attack, if a cookie containing sensitive data is set without the <code>secure</code> attribute, an attacker might be able to intercept that cookie. Once the attacker has this information, they can potentially impersonate a user, accessing confidential data and performing actions that they would not normally be authorized to do. Attackers often gain access to this sensitive cookie data when it is transmitted insecurely in plain text over a standard HTTP session, rather than being encrypted and sent over an HTTPS session. This type of attack is highly preventable by following best practices when setting sensitive session cookies.</p>
-          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
-          <ul>
-          <li>Set the <code>secure</code> attribute in the response header when setting cookies on the client side, and use a test tool to verify that secure cookie transmission is in place.</li>
-          <li>Always use HTTPS for all login pages and never redirect from HTTP to HTTPS, which leaves secure session data open to interception.</li>
-          <li>Follow other best practices when it comes to session cookies, such as setting the HttpOnly flag and maintaining highly time-limited sessions.</li>
-          <li>Consider implementing browser checks and providing secure data only within a browser that supports tight cookie security.</li>
-          <li>Generate session IDs in a way that is not easily predictable, invalidate sessions upon logout, and never reuse session IDs.</li>
-          <li>Educate developers to use built-in secure session-management functionality within the development environment instead of taking a DIY approach.</li>
-          </ul>
-          </div>
-                  </div>
-              </div>
-          </div>
-          <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
-              <header class="card__header">
-                  <div class="card__header__main">
-                      <div class="severity-icon severity-icon--medium"></div>
                       <h2 class="card__title">Cleartext Transmission of Sensitive Information</h2>
                       <div class="card__actions">
                           <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
@@ -1557,7 +1525,7 @@
                   </div>
                   <div class="card__panel dataflow">
                       <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      
+                      <div class="dataflow__filename"> app.js</div>
                       <div class="dataflow__item">
                           <span class="dataflow__lineno" title="line:column">12:20</span>
                           <div class="dataflow__code"><span class="dataflow__codeprefix">var http &#x3D; require(<br /></span><span class="marker">&#x27;http&#x27;</span><span class="dataflow__codesuffix">);</span></div>
@@ -1610,7 +1578,7 @@
                   </div>
                   <div class="card__panel dataflow">
                       <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
-                      <div class="dataflow__filename"> routes/index.js</div>
+                      
                       <div class="dataflow__item">
                           <span class="dataflow__lineno" title="line:column">41:30</span>
                           <div class="dataflow__code"><span class="dataflow__codeprefix">        const redirectPage &#x3D; <br /></span><span class="marker">req.body</span><span class="dataflow__codesuffix">.redirectPage</span></div>
@@ -1680,6 +1648,102 @@
           <li>Be aware of all sources of untrusted input being sent to the server that could be used to redirect the user, such as cookies, URL components, filenames, query results, request headers, and more.</li>
           <li>In particular, be aware of potential API calls that could send input indirectly to redirect the user.</li>
           <li>To protect end users, use a firewall to block known malicious sites, train users to recognize basic signs of a phishing attack, and ensure that all network endpoints are patched with the most current updates.</li>
+          </ul>
+          </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
+              <header class="card__header">
+                  <div class="card__header__main">
+                      <div class="severity-icon severity-icon--medium"></div>
+                      <h2 class="card__title">Information Exposure</h2>
+                      <div class="card__actions">
+                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
+                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
+                      </div>
+                  </div>
+                  <ul class="card__meta">
+                      <li class="card__meta__item">SNYK-CODE</li>
+                      <li class="card__meta__item">CWE-200</li>
+                  </ul>
+              </header>
+              <div class="card__section">
+                  <div class="card__summary severity--medium">
+                      <p>Disable X-Powered-By header for your Express app (consider using Helmet middleware), because it exposes information about the used framework to potential attackers.</p>
+                      <div class="file-location">Found in: <strong>app.js (line : 28)</strong></div>    
+                  </div>
+                  <div class="card__panel dataflow">
+                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
+                      <div class="dataflow__filename"> app.js</div>
+                      <div class="dataflow__item">
+                          <span class="dataflow__lineno" title="line:column">28:11</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix">var app &#x3D; <br /></span><span class="marker">express()</span><span class="dataflow__codesuffix">;</span></div>
+                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span><span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
+                          <span class="dataflow__step">0</span>
+                      </div>
+                  </div>
+                  <div class="card__panel fix-analysis">
+                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
+                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
+          <p>Sensitive data includes: personally identifiable information (PII) of employees, customers, users, or other third parties; financial information; code; intellectual property; or protected network information such as passwords. Exposure of sensitive information to an unauthorized actor occurs when any party who does not require this information for business purposes can remove this information from the secure network.
+          Consequences of exposure can include holding it for ransom payment, identity theft, or access to other internal network resources-along with financial loss due to regulatory fines, court settlements, or cost to restore compromised systems. As most attackers aim to extract sensitive information, this CWE only describes exploits that take advantage of vulnerabilities related to how data is handled: the management, storage, transfer, or removal of sensitive information.</p>
+          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
+          <ul>
+          <li>Encrypt data at all times, whether in transit or at rest.</li>
+          <li>When transporting data, always use a secure protocol such as TLS.</li>
+          <li>Before collecting PII or financial information, consider whether there is a true business need for this information; similarly, before storing the data, ensure that there is an ongoing business need.</li>
+          <li>Classify all incoming data according to privacy and security guidelines to improve awareness of sensitive data.</li>
+          <li>Ensure that caching is disabled for all transactions involving sensitive information.</li>
+          <li>Store passwords with secure, salted hashing functions.</li>
+          <li>Apply a network-wide least-privilege policy so sensitive data is provided only to users with business need to know.</li>
+          </ul>
+          </div>
+                  </div>
+              </div>
+          </div>
+          <div class="card card--vuln  disclosure--not-new severity--medium" data-snyk-test="medium">
+              <header class="card__header">
+                  <div class="card__header__main">
+                      <div class="severity-icon severity-icon--medium"></div>
+                      <h2 class="card__title">Use of Hardcoded Credentials</h2>
+                      <div class="card__actions">
+                          <span class="card__action card-dataflow is-selected" onclick="toggleCardView(event)">Data Flow</span>
+                          <span class="card__action card-fix" onclick="toggleCardView(event)">Fix Analysis</span>
+                      </div>
+                  </div>
+                  <ul class="card__meta">
+                      <li class="card__meta__item">SNYK-CODE</li>
+                      <li class="card__meta__item">CWE-798</li>
+                  </ul>
+              </header>
+              <div class="card__section">
+                  <div class="card__summary severity--medium">
+                      <p>Do not hardcode credentials in code. Found hardcoded credential used in typeorm.createConnection.</p>
+                      <div class="file-location">Found in: <strong>typeorm-db.js (line : 11)</strong></div>    
+                  </div>
+                  <div class="card__panel dataflow">
+                      <h2 class="card__panel__heading"><span class="heading-char">⇣</span> Data Flow</h2>
+                      <div class="dataflow__filename"> typeorm-db.js</div>
+                      <div class="dataflow__item">
+                          <span class="dataflow__lineno" title="line:column">6:1</span>
+                          <div class="dataflow__code"><span class="dataflow__codeprefix"><br /></span><span class="marker">typeorm.createConnection</span><span class="dataflow__codesuffix">({</span></div>
+                          <span class="dataflow__badge" title="Data is 'tainted' if it comes from an insecure source such as a file, the network, or the user. This tainted data is passed to a sensitive sink, as described below.">Source</span><span class="dataflow__badge" title="Sinks are the operations that must receive clean data and that you wouldn't want an attacker to be able to manipulate.">Sink</span>
+                          <span class="dataflow__step">0</span>
+                      </div>
+                  </div>
+                  <div class="card__panel fix-analysis">
+                      <h2 class="card__panel__heading"><span class="heading-char">✓</span> Fix Analysis</h2>
+                      <div class="card__panel__markdown"><h2 id="details">Details</h2>
+          <p>Developers may use hardcoded credentials for convenience when coding in order to simplify their workflow. While they are responsible for removing these before production, occasionally this task may fall through the cracks. This also becomes a maintenance challenge when credentials are re-used across multiple applications.</p>
+          <p>Once attackers gain access, they may take advantage of privilege level to remove or alter data, take down a site or app, or hold any of the above for ransom. The risk across multiple similar projects is even greater. If code containing the credentials is reused across multiple projects, they will all be compromised.</p>
+          <h3 id="best-practices-for-prevention">Best practices for prevention</h3>
+          <ul>
+          <li>Plan software architecture such that keys and passwords are always stored outside the code, wherever possible.</li>
+          <li>Plan encryption into software architecture for all credential information and ensure proper handling of keys, credentials, and passwords.</li>
+          <li>Prompt for a secure password on first login rather than hard-code a default password.</li>
+          <li>If a hardcoded password or credential must be used, limit its use, for example, to system console users rather than via the network.</li>
+          <li>Use strong hashes for inbound password authentication, ideally with randomly assigned salts to increase the difficulty level in case of brute-force attack.</li>
           </ul>
           </div>
                   </div>

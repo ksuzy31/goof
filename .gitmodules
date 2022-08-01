@@ -1,0 +1,3 @@
+[submodule "docker-goof"]
+	path = docker-goof
+	url = https://github.com/snyk-labs/docker-goof
