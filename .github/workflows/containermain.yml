@@ -10,7 +10,8 @@ jobs:
       with:
         go-version: "1.13"
     - name: Snyk container test 
-      run: snyk container test node:14.18.1 --file=Dockerfile --sarif --app-vulns --nested-jars-depth=5
+      run: snyk container test node:14.18.1 --file=Dockerfile --sarif-file-output=snyk-container.sarif --app-vulns --nested-jars-depth=5
+      continue-on-error: true
       env:
         SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
     - name: install snyk-to-html
@@ -19,6 +20,7 @@ jobs:
         npm install snyk-to-html -g
                # Convert JSON output from `snyk test --json` into a static HTML
         snyk container test node:14.18.1 --file=Dockerfile --json --app-vulns --nested-jars-depth=5 | snyk-to-html -o result.html
+        continue-on-error: true
         mkdir downloads
         cp -v /home/runner/work/java-goof/java-goof/*.html /home/runner/work/java-goof/java-goof/downloads
 
