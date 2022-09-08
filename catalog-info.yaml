@@ -1,12 +1,12 @@
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: npm-goof
-  title: Goof # optional, human readable component name
+  name: goof
+  title: NPM Goof # optional, human readable component name
   description: Goof is my first Backstage catalog item.
   annotations:
-    github.com/project-slug: kevin-s31-org/npm-goof
+    github.com/project-slug: ksuzy31/goof
 spec:
   type: service
-  owner: user:kevin-s31
+  owner: user:ksuzy31
   lifecycle: experimental
