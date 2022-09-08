@@ -6,6 +6,8 @@ metadata:
   description: Goof is my first Backstage catalog item.
   annotations:
     github.com/project-slug: ksuzy31/goof
+    snyk.io/org-name: kev-backstage-personal-github
+    snyk.io./projects-ids: ea46ceff-16c2-43ab-b931-e7e6e0bd7116,27875f24-00b5-404c-afcb-d52454e6b364,37b8a25f-7f59-4fd4-8960-154f3e0f195e,0566ac9a-955a-44c4-b98c-fea70865cc5b
 spec:
   type: service
   owner: user:ksuzy31
